@@ -1,50 +1,46 @@
-# React + TypeScript + Vite
+# LLM Output Comparison Tool
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project provides a web application that allows you to compare the outputs of different LLMs (Large Language Models) on a set of prompts. 
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Select Prompts:** Choose from a list of predefined prompts to use as input for the LLMs.
+- **Select Models:** Choose from a list of available LLMs (currently using the `ollama` library).
+- **Generate Outputs:** Submit the selected prompts and models to generate outputs from each LLM.
+- **View Outputs:** The application displays the outputs of each LLM, organized by model and prompt.
+- **Clear Outputs:** Clears the old responses from the page every time the "Submit" button is clicked.
+- **Abort Requests:** Includes an "Abort" button to cancel the LLM request in progress.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/emincangencer/llm-compare.git
+   ```
+2. **Install dependencies:**
+   ```bash
+   cd emincangencer/llm-compare
+   npm install
+   ```
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+4. **Access the application:**
+   Open your browser and navigate to `http://localhost:5173/`.
 
-- Configure the top-level `parserOptions` property like this:
+## Configuration
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Prompts:** The prompts are defined in the `prompts.json` file. You can modify this file to add or remove prompts.
+- **Models:** The application automatically detects the available LLMs using the `ollama` library. You can configure the `ollama` settings in your code.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Technologies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- React
+- TypeScript
+- Vite
+- ollama
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
