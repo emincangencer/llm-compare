@@ -112,7 +112,6 @@ function App() {
           const selectedPromptIds = Array.from(e.target.selectedOptions).map((option) => option.value);
           setSelectedPrompts(selectedPromptIds);
         }}>
-          <option value="">Select a prompt</option>
           {prompts.map((prompt) => (
             <option key={prompt.id} value={prompt.id}>
               {prompt.text}
@@ -126,7 +125,6 @@ function App() {
           const selectedModelIds = Array.from(e.target.selectedOptions).map((option) => option.value);
           setSelectedModels(selectedModelIds);
         }}>
-          <option value="">Select a model</option>
           {models.map((model) => (
             <option key={model.id} value={model.id}>
               {model.name}
